@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante - BOKADO Yopal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="icon" href="img/bokado.jpg" type="image/jpg">
+</head>
+<body>
+    <header id="mainHeader">
+        <a href="INDEX.HTML" class="logo">BOKADO<span>CARTA Y OPINIONES</span></a>
+        <nav class="nav-menu">
+            <a href="INDEX.HTML">Inicio</a>
+            <a href="#" id="btnBack">← Volver</a>
+            <div class="auth-menu-container" id="authMenuContainer" style="flex-direction:row">
+                <a href="#" id="btnOpenLogin" class="btn-auth btn-login">Iniciar Sesión</a>
+                <a href="#" id="btnOpenRegister" class="btn-auth btn-register">Registrarse</a>
+            </div>
+            <div class="user-logged-container" id="userLoggedContainer" style="display:none;flex-direction:row;align-items:center">
+                <span id="userEmailDisplay" class="user-email-text"></span>
+                <button type="button" id="btnLogout" class="btn-auth btn-logout" style="width:auto">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="rest-hero">
+        <img id="rImg" alt="">
+        <div>
+            <h1 id="rName">Restaurante</h1>
+            <div class="info-item">📍 <span id="rAddr"></span></div>
+            <div class="info-item">📞 <span id="rTel"></span></div>
+            <div class="info-item">⭐ <span class="rating-stars" id="rRating"></span> <span id="rAvg"></span></div>
+        </div>
+    </section>
+
+    <section class="rest-section" id="carta">
+        <h2>Carta</h2>
+        <p class="sub">Pasa las páginas con un clic: toca el lado derecho para avanzar y el izquierdo para volver.</p>
+        <div id="cartaBook"></div>
+    </section>
+
+    <section class="rest-section" id="opiniones">
+        <h2>Opiniones</h2>
+        <p class="sub">Cuenta cómo fue la comida, la atención y el ambiente.</p>
+        <div class="review-box" id="reviewBox"></div>
+        <div id="reviewList"></div>
+    </section>
+
+    <div id="authModalOverlay" class="auth-modal-overlay">
+        <div class="login-wrapper">
+            <button type="button" id="closeAuthModal" class="btn-close-modal" aria-label="Cerrar ventana">&times;</button>
+            <div class="login-card">
+                <input type="checkbox" id="reg-toggle" class="reg-toggle" style="display:none;" />
+                <div class="glow-blob blob-1"></div><div class="glow-blob blob-2"></div><div class="dark-overlay"></div>
+                <div class="view-container">
+                    <div class="form-view" id="login-view">
+                        <div class="header"><div class="decorative-dot"></div><div class="title">Bienvenido a BOKADO</div><p class="subtitle">Ingresa tus datos para iniciar sesión.</p></div>
+                        <form id="loginForm">
+                            <div class="input-group"><input type="email" id="loginEmail" class="input-field" placeholder="Correo electrónico" required autocomplete="email" /></div>
+                            <div class="input-group"><input type="password" id="loginPassword" class="input-field" placeholder="Contraseña" required autocomplete="current-password" /></div>
+                            <div style="height:12px"></div>
+                            <button type="submit" class="btn-submit">Iniciar Sesión</button>
+                        </form>
+                        <div class="signup-prompt">¿No tienes una cuenta? <label for="reg-toggle" class="toggle-link">Regístrate</label></div>
+                    </div>
+                    <div class="form-view" id="signup-view">
+                        <div class="header"><div class="decorative-dot"></div><div class="title">Crear Cuenta</div><p class="subtitle">Regístrate para continuar.</p></div>
+                        <form id="registerForm">
+                            <div class="input-group"><input type="text" id="registerName" class="input-field" placeholder="Nombre Completo" required autocomplete="name" /></div>
+                            <div class="input-group"><input type="email" id="registerEmail" class="input-field" placeholder="Correo electrónico" required autocomplete="email" /></div>
+                            <div class="input-group"><input type="password" id="registerPassword" class="input-field" placeholder="Contraseña" required autocomplete="new-password" /></div>
+                            <div style="height:12px"></div>
+                            <button type="submit" class="btn-submit">Registrarse</button>
+                        </form>
+                        <div class="signup-prompt">¿Ya tienes una cuenta? <label for="reg-toggle" class="toggle-link">Inicia Sesión</label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-brand">BOKADO Yopal &copy; 2026 — Todos los derechos reservados</p>
+            <div class="footer-credits"><span>Desarrollado por:</span> <strong>Cristian Medina</strong> & <strong>Andres Vargas</strong></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="cartas.js"></script>
+    <script src="carta.js"></script>
+    <script src="restaurante.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

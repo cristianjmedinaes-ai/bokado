@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - BOKADO</title>
+    <link rel="icon" href="img/bokado.jpg" type="image/jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="mainHeader">
+        <a href="INDEX.HTML" class="logo">
+            BOKADO
+            <span>SOBRE NOSOTROS</span>
+        </a>
+        <nav class="nav-menu">
+            <a href="INDEX.HTML">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="ubicaciones.html">Ubicaciones</a>
+            <a href="hablemos.html">Hablemos</a>
+
+            <!-- Zona de Autenticación -->
+            <div class="auth-menu-container" id="authMenuContainer">
+                <a href="#" id="btnOpenLogin" class="btn-auth btn-login">Iniciar Sesión</a>
+                <a href="#" id="btnOpenRegister" class="btn-auth btn-register">Registrarse</a>
+            </div>
+
+            <!-- Zona de Sesión Activa -->
+            <div class="user-logged-container" id="userLoggedContainer" style="display: none;">
+                <span id="userEmailDisplay" class="user-email-text">usuario@correo.com</span>
+                <button type="button" id="btnLogout" class="btn-auth btn-logout">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-container">
+        
+        <section class="about-card">
+            <h2>Nuestra Aplicación</h2>
+            <p><strong>BOKADO</strong> es la plataforma digital gastronómica creada para conectar a los habitantes y visitantes de Yopal con la mejor oferta culinaria de la región. Nuestro objetivo es visibilizar tanto los grandes restaurantes tradicionales como los nuevos emprendimientos locales.</p>
+            
+            <h3>Beneficios de BOKADO:</h3>
+            <ul class="benefits-list">
+                <li>✅ <strong>Exploración por categorías:</strong> Encuentra desde la mejor mamona llanera hasta repostería artesanal en segundos.</li>
+                <li>✅ <strong>Ubicaciones exactas:</strong> Accede a mapas dinámicos y rutas rápidas hacia tu restaurante favorito.</li>
+                <li>✅ <strong>Información actualizada:</strong> Contacto directo, valoraciones de usuarios y recomendaciones en tiempo real.</li>
+                <li>✅ <strong>Apoyo al comercio local:</strong> Impulsamos la gastronomía de Casanare ofreciendo una vitrina a los negocios locales.</li>
+            </ul>
+        </section>
+        <!-- Modal de Autenticación (Login / Registro) -->
+    <div id="authModalOverlay" class="auth-modal-overlay">
+        <div class="login-wrapper">
+            <button type="button" id="closeAuthModal" class="btn-close-modal" aria-label="Cerrar ventana">&times;</button>
+            <div class="login-card">
+                <input type="checkbox" id="reg-toggle" class="reg-toggle" style="display: none;" />
+
+                <div class="glow-blob blob-1"></div>
+                <div class="glow-blob blob-2"></div>
+                <div class="dark-overlay"></div>
+
+                <div class="view-container">
+                    <!-- Vista Inicio de Sesión -->
+                    <div class="form-view" id="login-view">
+                        <div class="header">
+                            <div class="decorative-dot"></div>
+                            <div class="title">Bienvenido a BOKADO</div>
+                            <p class="subtitle">Ingresa tus datos para iniciar sesión.</p>
+                        </div>
+
+                        <form id="loginForm">
+                            <div class="input-group">
+                                <input type="email" id="loginEmail" class="input-field" placeholder="Correo electrónico" required autocomplete="email" />
+                            </div>
+                            <div class="input-group">
+                                <input type="password" id="loginPassword" class="input-field" placeholder="Contraseña" required autocomplete="current-password" />
+                            </div>
+                            <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                            <button type="submit" class="btn-submit">Iniciar Sesión</button>
+                        </form>
+
+                        <div class="signup-prompt">
+                            ¿No tienes una cuenta?
+                            <label for="reg-toggle" class="toggle-link">Regístrate</label>
+                        </div>
+                    </div>
+
+                    <!-- Vista Registro -->
+                    <div class="form-view" id="signup-view">
+                        <div class="header">
+                            <div class="decorative-dot"></div>
+                            <div class="title">Crear Cuenta</div>
+                            <p class="subtitle">Regístrate para continuar.</p>
+                        </div>
+
+                        <form id="registerForm">
+                            <div class="input-group">
+                                <input type="text" id="registerName" class="input-field" placeholder="Nombre Completo" required autocomplete="name" />
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="registerEmail" class="input-field" placeholder="Correo electrónico" required autocomplete="email" />
+                            </div>
+                            <div class="input-group">
+                                <input type="password" id="registerPassword" class="input-field" placeholder="Contraseña" required autocomplete="new-password" />
+                            </div>
+                            <div style="height: 12px;"></div>
+                            <button type="submit" class="btn-submit">Registrarse</button>
+                        </form>
+
+                        <div class="signup-prompt">
+                            ¿Ya tienes una cuenta?
+                            <label for="reg-toggle" class="toggle-link">Inicia Sesión</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="grid-mv">
+            <article class="about-card">
+                <h2>Misión</h2>
+                <p>Transformar la forma en que las personas descubren y disfrutan la gastronomía en Yopal, mediante una plataforma accesible, intuitiva y moderna que promueva la riqueza culinaria de la región y conecte a los comensales con experiencias gastronómicas inolvidables.</p>
+            </article>
+
+            <article class="about-card">
+                <h2>Visión</h2>
+                <p>Consolidarnos para el año 2028 como la guía gastronómica digital líder en Casanare y la Orinoquía colombiana, reconocidos por nuestra innovación, impulso a los restaurantes locales y constante evolución tecnológica en beneficio de nuestra comunidad.</p>
+            </article>
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

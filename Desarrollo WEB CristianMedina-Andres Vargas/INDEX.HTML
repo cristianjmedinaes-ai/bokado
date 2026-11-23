@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOKADO - Guía Gastronómica de Yopal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/bokado.jpg" type="image/jpg">
+</head>
+<body>
+
+    <!-- Capa Oscura de Fondo -->
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <!-- Encabezado Principal -->
+    <header id="mainHeader">
+        <a href="INDEX.HTML" class="logo">
+            BOKADO
+            <span>YOPAL, CASANARE</span>
+        </a>
+
+        <!-- Botón de Icono a la derecha -->
+        <button type="button" id="openMenuBtn" class="menu-toggle-btn" aria-label="Abrir menú">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24">
+                <circle cx="4" cy="5" r="2"/>
+                <rect x="9" y="3.5" width="13" height="3" rx="1.5"/>
+                <circle cx="4" cy="12" r="2"/>
+                <rect x="9" y="10.5" width="13" height="3" rx="1.5"/>
+                <circle cx="4" cy="19" r="2"/>
+                <rect x="9" y="17.5" width="13" height="3" rx="1.5"/>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Menú Lateral Desplegable -->
+    <aside id="navDrawer" class="nav-menu-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">MENÚ BOKADO</span>
+            <button type="button" id="closeMenuBtn" class="btn-close-drawer" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <nav class="drawer-links">
+            <a href="INDEX.HTML" class="active">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="ubicaciones.html">Ubicaciones</a>
+            <a href="hablemos.html">Hablemos</a>
+
+            <!-- Zona de Autenticación -->
+            <div class="auth-menu-container" id="authMenuContainer">
+                <hr class="drawer-divider">
+                <a href="#" id="btnOpenLogin" class="btn-auth btn-login">Iniciar Sesión</a>
+                <a href="#" id="btnOpenRegister" class="btn-auth btn-register">Registrarse</a>
+            </div>
+
+            <!-- Zona de Sesión Activa -->
+            <div class="user-logged-container" id="userLoggedContainer" style="display: none;">
+                <hr class="drawer-divider">
+                <span id="userEmailDisplay" class="user-email-text">usuario@correo.com</span>
+                <button type="button" id="btnLogout" class="btn-auth btn-logout">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Hero / Buscador -->
+    <section class="hero">
+        <h1>Descubre la Gastronomía de Yopal</h1>
+        <p>Encuentra los mejores restaurantes, antojos y rincones gastronómicos del llano.</p>
+        
+        <div class="search-box">
+            <input 
+                type="search" 
+                id="searchInput"
+                class="search-input" 
+                placeholder="¿Qué se te antoja hoy en Yopal? Ej. Mamona, Hamburguesa..." 
+            >
+            <button type="button" class="search-btn" id="searchBtn">Buscar</button>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <main class="categories-container">
+        <h2 class="section-title">Explora por categorías en Yopal</h2>
+        <p class="section-subtitle">Selecciona el tipo de comida o experiencia gastronómica que buscas hoy.</p>
+
+        <div class="grid-categories" id="categoriesGrid">
+
+            <a href="comidallanera.html" class="card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Comida Llanera">
+                <div class="card-badge">Tradición</div>
+                <div class="card-overlay">
+                    <div class="card-title">Comida Llanera</div>
+                    <div class="card-subtext">Mamona, carne a la perra, tungos y hayacas</div>
+                </div>
+            </a>
+
+            <a href="comidadelmar.html" class="card">
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80" alt="Comida del Mar">
+                <div class="card-badge">Especialidades</div>
+                <div class="card-overlay">
+                    <div class="card-title">Comida del Mar y Río</div>
+                    <div class="card-subtext">Ceviches, pescado frito, cazuelas y mojarra</div>
+                </div>
+            </a>
+
+            <a href="almuerzoydesayunos.html" class="card">
+                <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80" alt="Desayunos y Almuerzos">
+                <div class="card-badge">Día a Día</div>
+                <div class="card-overlay">
+                    <div class="card-title">Desayunos y Almuerzos</div>
+                    <div class="card-subtext">Caldos criollos, ejecutivos y platos del día</div>
+                </div>
+            </a>
+
+            <a href="comidasrapidas.html" class="card">
+                <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?auto=format&fit=crop&w=600&q=80" alt="Comidas Rápidas">
+                <div class="card-badge">Noche & Antojos</div>
+                <div class="card-overlay">
+                    <div class="card-title">Comidas Rápidas</div>
+                    <div class="card-subtext">Hamburguesas artesanales, perros, pollo frito y pizzas</div>
+                </div>
+            </a>
+
+            <a href="comidamexicana.html" class="card">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80" alt="Comida Mexicana">
+                <div class="card-badge">Internacional</div>
+                <div class="card-overlay">
+                    <div class="card-title">Comida Mexicana</div>
+                    <div class="card-subtext">Tacos, burritos, quesadillas y nachos</div>
+                </div>
+            </a>
+
+            <a href="postreriaypasteleria.html" class="card">
+                <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Postrería y Pastelería">
+                <div class="card-badge">Café & Dulces</div>
+                <div class="card-overlay">
+                    <div class="card-title">Postrería y Pastelería</div>
+                    <div class="card-subtext">Cafés especiales, tortas, postres y helados</div>
+                </div>
+            </a>
+
+            <a href="experienciasnuevas.html" class="card card-wide">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurantes Destacados">
+                <div class="card-overlay">
+                    <div class="card-title">Nuevas Experiencias</div>
+                    <div class="card-subtext">Descubre nuevas experiencias gastronómicas</div>
+                </div>
+            </a>
+
+            <div id="noResults" class="no-results">
+                <p>No se encontraron categorías asociadas a tu búsqueda.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal de Autenticación (Login / Registro) (Línea 145) -->
+    <div id="authModalOverlay" class="auth-modal-overlay">
+        <div class="login-wrapper">
+            <button type="button" id="closeAuthModal" class="btn-close-modal" aria-label="Cerrar ventana">&times;</button>
+            <div class="login-card">
+                <input type="checkbox" id="reg-toggle" class="reg-toggle" style="display: none;" />
+
+                <div class="glow-blob blob-1"></div>
+                <div class="glow-blob blob-2"></div>
+                <div class="dark-overlay"></div>
+
+                <div class="view-container">
+                    <!-- Vista Inicio de Sesión -->
+                    <div class="form-view" id="login-view">
+                        <div class="header">
+                            <div class="decorative-dot"></div>
+                            <div class="title">Bienvenido a BOKADO</div>
+                            <p class="subtitle">Ingresa tus datos para iniciar sesión.</p>
+                        </div>
+
+                        <!-- Formulario de Iniciar Sesión -->
+<!-- Formulario de Iniciar Sesión (Conservando tus clases de estilo original) -->
+<form id="loginForm">
+    <div class="input-group">
+        <label for="loginEmail">Correo electrónico</label>
+        <input type="email" id="loginEmail" required placeholder="tu@correo.com">
+    </div>
+    
+    <div class="input-group">
+        <label for="loginPassword">Contraseña</label>
+        <div class="password-wrapper">
+            <input type="password" id="loginPassword" required placeholder="••••••••">
+            <button type="button" class="toggle-password" data-target="loginPassword">👁️</button>
+        </div>
+    </div>
+
+    <div style="text-align: right; margin-bottom: 15px;">
+        <a href="#" id="btnForgotPassword" style="font-size: 0.85rem; color: #ff5722; text-decoration: none;">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <button type="submit" class="btn-primary">Iniciar Sesión</button>
+</form>
+
+<!-- Formulario para solicitar el código (Oculto inicialmente) -->
+<form id="forgotPasswordForm" style="display: none;">
+    <p style="font-size: 0.9rem; margin-bottom: 15px;">Ingresa tu correo y te enviaremos un código de verificación para restablecer tu clave.</p>
+    <div class="input-group">
+        <label for="resetEmail">Correo electrónico</label>
+        <input type="email" id="resetEmail" required placeholder="tu@correo.com">
+    </div>
+    <button type="submit" class="btn-primary">Enviar Código</button>
+    <button type="button" id="btnBackToLogin" style="background: none; border: none; margin-top: 10px; cursor: pointer; color: #666; width: 100%;">Volver a Iniciar Sesión</button>
+</form>
+
+<!-- Formulario para ingresar el código y nueva contraseña (Oculto inicialmente) -->
+<form id="verifyOtpForm" style="display: none;">
+    <p style="font-size: 0.9rem; margin-bottom: 15px;">Escribe el código recibido y tu nueva contraseña.</p>
+    <div class="input-group">
+        <label for="otpToken">Código de Verificación (OTP)</label>
+        <input type="text" id="otpToken" required placeholder="123456">
+    </div>
+    <div class="input-group">
+        <label for="newPassword">Nueva Contraseña</label>
+        <div class="password-wrapper">
+            <input type="password" id="newPassword" required placeholder="••••••••">
+            <button type="button" class="toggle-password" data-target="newPassword">👁️</button>
+        </div>
+    </div>
+    <button type="submit" class="btn-primary">Cambiar Contraseña</button>
+</form>
+
+                        <div class="signup-prompt">
+                            ¿No tienes una cuenta?
+                            <label for="reg-toggle" class="toggle-link">Regístrate</label>
+                        </div>
+                    </div>
+
+                    <!-- Vista Registro -->
+                    <div class="form-view" id="signup-view">
+                        <div class="header">
+                            <div class="decorative-dot"></div>
+                            <div class="title">Crear Cuenta</div>
+                            <p class="subtitle">Regístrate para continuar.</p>
+                        </div>
+
+                        <form id="registerForm">
+                            <div class="input-group">
+                                <input type="text" id="registerName" class="input-field" placeholder="Nombre Completo" required autocomplete="name" />
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="registerEmail" class="input-field" placeholder="Correo electrónico" required autocomplete="email" />
+                            </div>
+                            <div class="input-group">
+                                <input type="password" id="registerPassword" class="input-field" placeholder="Contraseña" required autocomplete="new-password" />
+                            </div>
+                            <div style="height: 12px;"></div>
+                            <button type="submit" class="btn-submit">Registrarse</button>
+                        </form>
+
+                        <div class="signup-prompt">
+                            ¿Ya tienes una cuenta?
+                            <label for="reg-toggle" class="toggle-link">Inicia Sesión</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <!-- 1. CDN de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. Tu configuración con la URL y la API Key -->
+    <script src="supabase.js"></script>
+
+    <!-- 3. Lógica global del proyecto -->
+    <script src="app.js"></script>
+</body>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-brand">BOKADO Yopal &copy; 2026 — Todos los derechos reservados</p>
+            <div class="footer-credits">
+                <span>Desarrollado por:</span>
+                <strong>Cristian Medina</strong> & <strong>Andres Vargas</strong>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
